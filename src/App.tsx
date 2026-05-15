@@ -1,13 +1,13 @@
 import './App.css'
-import Day13 from './day-13-states/Day13'
-import ExerciseOne from './day-13-states/ExerciseOne'
+import Day14 from './day-14/Day14'
 
 function App() {
 
   return (
     <div>
-      <Day13 />
-      <ExerciseOne />
+      {/* <Day13 /> */}
+      {/* <ExerciseOne /> */}
+      <Day14/>
     </div>
     
   )
