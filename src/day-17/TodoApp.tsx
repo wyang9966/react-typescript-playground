@@ -12,7 +12,6 @@ export default function TodoApp() {
     const [todos, setTodos] = useLocalStorage<Todo[]>('todos', []);
     const [inputValue, setInputValue] = useState('');
     const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
-    const [isDark, setIsDark] = useState(false);
 
     const inputRef = useRef<HTMLInputElement>(null);
 
@@ -60,18 +59,10 @@ export default function TodoApp() {
     return (
         <div>
             <div>
-                <h1>Todo App</h1>
-                <button onClick={() => setIsDark(!isDark)}>
-                    {isDark ? '☀️ Light' : '🌙 Dark'}
-                </button>
-            </div>
-
-            <div>
                 <input
                     ref={inputRef}
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
-                    onKeyDown={(e) => e.key === 'Enter' && addTodo()}
                     placeholder="What needs to be done?"
                 />
                 <button onClick={addTodo}>
